@@ -1,0 +1,11 @@
+
+- name: Build and push Docker image
+  uses: docker/build-push-action@v3
+  with:
+    context: .
+    push: true
+    platforms: linux/amd64,linux/arm64
+    tags: |
+      jagoum/lambert_w_function:sha-${{ github.sha }}
+      jagoum/lambert_w_funtion:branch-${{ github.ref_name }}
+      jagoum/lambert_w_function:latest
