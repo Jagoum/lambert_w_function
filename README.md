@@ -29,5 +29,10 @@ x^x = 2;
 
  -  Now that it has being downloaded run it using 
  ```
- docker run --rm ghcr.io/jagoum/lambert_w:latest
+ docker run --rm ghcr.io/jagoum/lambert_w:latest arg
+ 
+ for negative numbers, 
+
+ docker run --rm ghcri.io/jagoum/lambert_w:latest -- arg
+
  ``` 

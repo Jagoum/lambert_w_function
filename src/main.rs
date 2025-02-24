@@ -1,22 +1,33 @@
 use std::io::{self};
 
-use lib::lambert_funtion;
-use structopt::clap::ErrorKind;
+use lambert_w_function::lambert_funtion;
+use structopt::{clap::ErrorKind, StructOpt};
 pub mod lib;
+#[derive(StructOpt)]
+#[structopt()]
+pub struct Arg{
+     x:f64
+}
+
+impl Arg{
+
+fn new(x:f64)->Self{
+
+    Self{x}
+}
+}
 
 
 fn main() {
  
- let mut  args = String::new();
+let mut  args = Arg::from_args();
  println!("Enter the number (x)");
-io::stdin().read_line(&mut args).expect("Failed to read line");
- let x: f64 = match  args.trim().parse() {
-    Ok(x) => x,
-    Err(_) => {println!("{:?}",ErrorKind::InvalidValue);
-    -0.0
-    }
-};
-println!("W({x}) = {}",lambert_funtion(x).unwrap());
+
+ match lambert_funtion(args.x) {
+    Ok(w) => println!("W({}) = {}", args.x, w),
+    Err(e) => eprintln!( "Error: {}",e),
+ }
+
 }
 
 #[test]
