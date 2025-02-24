@@ -1,0 +1,9 @@
+[package]
+name = "lambert_w_function"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+log = "0.4.26"
+structopt = "0.3.26"
+thiserror = "2.0.11"
