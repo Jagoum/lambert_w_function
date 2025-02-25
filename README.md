@@ -1,7 +1,7 @@
 # lambert_w_function
 
 - This program is to implement the lambert w function in math
-The lambert w function is a mathematical approach that was propose by the mathematicain Lambert .W
+The lambert w function is a mathematical approach that was proposed by the mathematicain Lambert .W
 
 This function is also called the the product log . And just like natural log (ln) is the inverse of the funtion (e), The lambert w function is also and inverse to the function f(x) = xe^x
 
@@ -31,7 +31,7 @@ x^x = 2;
  ```
  docker run --rm ghcr.io/jagoum/lambert_w:latest arg
  
- for negative numbers, 
+ ## for negative numbers, 
 
  docker run --rm ghcri.io/jagoum/lambert_w:latest -- arg
 
