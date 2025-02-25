@@ -1,5 +1,6 @@
 
 use lambert_w_function::lambert_funtion;
+use log::info;
 use structopt::StructOpt;
 #[derive(StructOpt)]
 #[structopt()]
@@ -8,9 +9,10 @@ pub struct Arg{
 }
 
 fn main() {
+    env_logger::init();
  
 let  args = Arg::from_args();
- println!("Enter the number (x)");
+ info!("Evaulating the product log of {}",args.x);
 
  match lambert_funtion(args.x) {
     Ok(w) => println!("W({}) = {}", args.x, w),
@@ -20,7 +22,6 @@ let  args = Arg::from_args();
 }
 
 #[test]
-
 fn it_worlks() {
     assert_eq!(
         lambert_funtion(-0.367879441171299999).unwrap(),

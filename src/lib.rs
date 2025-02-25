@@ -1,13 +1,14 @@
-use anyhow::{Result, bail};
+use anyhow::{bail, Result};
 use std::f64::consts::E;
+
 pub fn lambert_funtion(x: f64) -> Result<f64> {
     let mut wcount;
     let mut l1;
     let mut l2;
     let mut l;
-    let mut wx = 0.0;
+    // let mut wx = 0.0;
     if x > -(1.0 / E) {
-        wx = 1.0;
+       let mut  wx = 1.0;
         wcount = 0.0;
 
         while (wx - wcount) > 0.000_000_001 || (wcount - wx) > 0.000_000_001 {
